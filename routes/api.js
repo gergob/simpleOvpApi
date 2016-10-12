@@ -111,4 +111,20 @@ router.get('/menu', function(req, res, next){
   res.send(menu);
 });
 
+router.get('/resume', function(req, res, next){
+    res.send({elements: []});
+});
+
+router.get('/movies', function(req, res, next){
+    res.send({elements: []});
+});
+
+router.get('/series', function(req, res, next){
+    res.send({elements: []});
+});
+
+router.get('/search', function(req, res, next){
+    res.send({elements: []});
+});
+
 module.exports = router;
