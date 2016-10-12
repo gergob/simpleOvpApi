@@ -43,7 +43,8 @@ router.post('/login', function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   var email = req.body.email || null;
   var password = req.body.password || null;
-
+  console.log(email);
+  console.log(password);
   if(email.toLowerCase() === 'abc@abc.com' && password === 'abc') {
     res.sendStatus(200);
   }
