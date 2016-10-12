@@ -36,7 +36,7 @@ router.get('/banner', function(req, res, next) {
   res.send(bannerData);
 });
 
-router.post('/login', function(req, res, next){
+router.post('/login', function(req, res, next) {
   res.header( 'Access-Control-Allow-Origin', '*');
   res.header( 'Access-Control-Allow-Credentials', true);
   res.header( 'Access-Control-Allow-Methods', 'GET');
@@ -53,7 +53,7 @@ router.post('/login', function(req, res, next){
 
 });
 
-router.get('/menu', function(req, res, next){
+router.get('/menu', function(req, res, next) {
   var menu = {
     config_menu: {
       id: 'DEFAULT',
@@ -111,19 +111,50 @@ router.get('/menu', function(req, res, next){
   res.send(menu);
 });
 
-router.get('/resume', function(req, res, next){
+router.get('/resume', function(req, res, next) {
+  var elements = [{
+    id: 1,
+    logoSrc: 'images/logo_antman.jpg',
+    title: 'Ant - Man',
+    genre: 'Sci-Fi/Action'
+  }, {
+    id: 2,
+    logoSrc: 'images/logo_avengers.jpg',
+    title: 'Avengers',
+    genre: 'Sci-Fi/Action'
+  }, {
+    id: 3,
+    logoSrc: 'images/logo_edgeoftomorrow.jpg',
+    title: 'Edge of Tomorrow',
+    genre: 'Sci-Fi/Action'
+  }, {
+    id: 4,
+    logoSrc: 'images/logo_interstellar.jpg',
+    title: 'Interstellar',
+    genre: 'Sci-Fi'
+  }, {
+    id: 5,
+    logoSrc: 'images/logo_johncarter.jpg',
+    title: 'John Carter',
+    genre: 'Sci-Fi'
+  }];
+
+  res.send({items: elements});
+});
+
+router.get('/movie', function(req, res, next) {
     res.send({elements: []});
 });
 
-router.get('/movies', function(req, res, next){
+router.get('/movie/:id', function(req, res, next) {
     res.send({elements: []});
 });
 
-router.get('/series', function(req, res, next){
+router.get('/serie', function(req, res, next) {
     res.send({elements: []});
 });
 
-router.get('/search', function(req, res, next){
+router.get('/search', function(req, res, next) {
     res.send({elements: []});
 });
 
