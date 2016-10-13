@@ -64,6 +64,8 @@ router.get('/menu', function(req, res, next) {
           'id': 'resume',
           'state': '',
           'title': 'Resume',
+          'page': 'Resume',
+          'icon': 'update',
           'items': []
         },
         {
@@ -71,23 +73,31 @@ router.get('/menu', function(req, res, next) {
             'id': 'movies',
             'state': '',
             'title': 'Movies',
+            'page': 'Resume',
+            'icon': 'movie',
             'items': [{
                   'action': 'accedo://page/movies/action',
                   'id': 'movies-action',
                   'state': '',
                   'title': 'Action',
+                  'page': 'Resume',
+                  'icon': '',
                   'items': []
             },{
                     'action': 'accedo://page/movies/comedy',
                     'id': 'movies-comedy',
                     'state': '',
                     'title': 'Comedy',
+                    'page': 'Resume',
+                    'icon': '',
                     'items': []
             },{
                     'action': 'accedo://page/movies/scifi',
                     'id': 'movies-scifi',
                     'state': '',
                     'title': 'Sci-Fi',
+                    'page': 'Resume',
+                    'icon': '',
                     'items': []
             }]
         },
@@ -96,6 +106,8 @@ router.get('/menu', function(req, res, next) {
             'id': 'series',
             'state': '',
             'title': 'Series',
+            'page': 'Resume',
+            'icon': 'theaters',
             'items': []
         },
         {
@@ -103,6 +115,8 @@ router.get('/menu', function(req, res, next) {
             'id': 'search',
             'state': '',
             'title': 'Search',
+            'page': 'Resume',
+            'icon': 'search',
             'items': []
           },
       ]
