@@ -1,6 +1,120 @@
 var express = require('express');
 var router = express.Router();
 
+var movies = [{
+  id: 1,
+  logoSrc: 'images/logo_antman.jpg',
+  imageSrc: 'images/banner_antman.jpg',
+  title: 'Ant - Man',
+  genre: 'Sci-Fi/Action',
+  finished: false
+}, {
+  id: 2,
+  logoSrc: 'images/logo_avengers.jpg',
+  imageSrc: 'images/banner_avengers.jpg',
+  title: 'Avengers',
+  genre: 'Sci-Fi/Action',
+  finished: true
+}, {
+  id: 3,
+  logoSrc: 'images/logo_edgeoftomorrow.jpg',
+  imageSrc: 'images/banner_edgeoftomorrow.jpg',
+  title: 'Edge of Tomorrow',
+  genre: 'Sci-Fi/Action',
+  finished: false
+}, {
+  id: 4,
+  logoSrc: 'images/logo_interstellar.jpg',
+  imageSrc: 'images/banner_interstellar.jpg',
+  title: 'Interstellar',
+  genre: 'Sci-Fi',
+  finished: false
+}, {
+  id: 5,
+  logoSrc: 'images/logo_johncarter.jpg',
+  imageSrc: 'images/banner_johncarter.jpg',
+  title: 'John Carter',
+  genre: 'Sci-Fi',
+  finished: true
+}, {
+  id: 6,
+  logoSrc: 'images/logo_captainamerica.jpg',
+  imageSrc: 'images/banner_captainamerica.jpg',
+  title: 'Captain America',
+  genre: 'Sci-Fi',
+  finished: false
+}, {
+  id: 7,
+  logoSrc: 'images/logo_deadpool.jpg',
+  imageSrc: 'images/banner_deadpool.jpg',
+  title: 'Deadpool',
+  genre: 'Sci-Fi',
+  finished: false
+}, {
+  id: 8,
+  logoSrc: 'images/logo_fantastic4.jpg',
+  imageSrc: 'images/banner_fantastic4.jpg',
+  title: 'Fant4stic',
+  genre: 'Sci-Fi',
+  finished: true
+}, {
+  id: 9,
+  logoSrc: 'images/logo_frozen.jpg',
+  imageSrc: 'images/banner_frozen.jpg',
+  title: 'Frozen',
+  genre: 'Animation',
+  finished: true
+}, {
+  id: 10,
+  logoSrc: 'images/logo_ironman3.jpg',
+  imageSrc: 'images/banner_ironman3.jpg',
+  title: 'Iron Man 3',
+  genre: 'Sci-Fi',
+  finished: false
+}, {
+  id: 11,
+  logoSrc: 'images/logo_rio.jpg',
+  imageSrc: 'images/banner_rio.jpg',
+  title: 'Rio',
+  genre: 'Animation',
+  finished: false
+}, {
+  id: 12,
+  logoSrc: 'images/logo_riseoftheguardians.jpg',
+  imageSrc: 'images/banner_riseoftheguardians.jpg',
+  title: 'Rise of the Guardians',
+  genre: 'Animation',
+  finished: true
+}, {
+  id: 13,
+  logoSrc: 'images/logo_startrek.jpg',
+  imageSrc: 'images/banner_startrek.jpg',
+  title: 'Star Trek',
+  genre: 'Sci-Fi',
+  finished: false
+}, {
+  id: 14,
+  logoSrc: 'images/logo_thehobbit.jpg',
+  imageSrc: 'images/banner_thehobbit.jpg',
+  title: 'The Hobbit',
+  genre: 'Sci-Fi',
+  finished: false
+}, {
+  id: 15,
+  logoSrc: 'images/logo_theinterview.jpg',
+  imageSrc: 'images/banner_theinterview.jpg',
+  title: 'The Interview',
+  genre: 'Action-Comedy',
+  finished: false
+}, {
+  id: 16,
+  logoSrc: 'images/logo_warcraft.jpg',
+  imageSrc: 'images/banner_warcraft.jpg',
+  title: 'Warcraft',
+  genre: 'Sci-Fi',
+  finished: true
+}];
+
 router.get('/banner', function(req, res, next) {
   res.header( 'Access-Control-Allow-Origin', '*');
   res.header( 'Access-Control-Allow-Credentials', true);
@@ -73,7 +187,7 @@ router.get('/menu', function(req, res, next) {
             'id': 'movies',
             'state': '',
             'title': 'Movies',
-            'page': 'Resume',
+            'page': 'Movies',
             'icon': 'movie',
             'items': [{
                   'action': 'accedo://page/movies/action',
@@ -106,7 +220,7 @@ router.get('/menu', function(req, res, next) {
             'id': 'series',
             'state': '',
             'title': 'Series',
-            'page': 'Resume',
+            'page': 'Series',
             'icon': 'theaters',
             'items': []
         },
@@ -115,7 +229,7 @@ router.get('/menu', function(req, res, next) {
             'id': 'search',
             'state': '',
             'title': 'Search',
-            'page': 'Resume',
+            'page': 'Search',
             'icon': 'search',
             'items': []
           },
@@ -127,38 +241,13 @@ router.get('/menu', function(req, res, next) {
 });
 
 router.get('/resume', function(req, res, next) {
-  var elements = [{
-    id: 1,
-    logoSrc: 'images/logo_antman.jpg',
-    title: 'Ant - Man',
-    genre: 'Sci-Fi/Action'
-  }, {
-    id: 2,
-    logoSrc: 'images/logo_avengers.jpg',
-    title: 'Avengers',
-    genre: 'Sci-Fi/Action'
-  }, {
-    id: 3,
-    logoSrc: 'images/logo_edgeoftomorrow.jpg',
-    title: 'Edge of Tomorrow',
-    genre: 'Sci-Fi/Action'
-  }, {
-    id: 4,
-    logoSrc: 'images/logo_interstellar.jpg',
-    title: 'Interstellar',
-    genre: 'Sci-Fi'
-  }, {
-    id: 5,
-    logoSrc: 'images/logo_johncarter.jpg',
-    title: 'John Carter',
-    genre: 'Sci-Fi'
-  }];
-
+  var elements = movies;
   res.send({items: elements});
 });
 
 router.get('/movie', function(req, res, next) {
-    res.send({elements: []});
+  var elements = movies;
+  res.send({items: elements});
 });
 
 router.get('/movie/:id', function(req, res, next) {
