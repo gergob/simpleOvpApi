@@ -1,0 +1,14 @@
+{
+    "name": "simpleOvpApi",
+    "version": "0.5.0",
+    "description": "API documentation for the sample OVP Api",
+    "title": "Simple OVP API Docs",
+    "url": "",
+    "header": {
+        "title": "Simple OVP API Docs"
+    },
+    "template": {
+        "withCompare": true,
+        "withGenerator": true
+    }
+}
