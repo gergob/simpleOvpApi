@@ -302,7 +302,7 @@ router.post('/search', function(req, res, next) {
         res.sendStatus(404);
     } else {
         res.send({
-            elements: result
+            items: result
         });
     }
 });
