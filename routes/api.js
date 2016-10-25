@@ -293,8 +293,8 @@ router.post('/search', function(req, res, next) {
         if (movie.title.toLowerCase().indexOf(keyword) >= 0 ||
             movie.description.toLowerCase().indexOf(keyword) >= 0 ||
             movie.genre.toLowerCase().indexOf(keyword) >= 0) {
-              console.log('Found entry matching search criteria, id:[' + movie.id + '] and title:[' + movie.title + ']')
-              result.push(movie);
+            console.log('Found entry matching search criteria, id:[' + movie.id + '] and title:[' + movie.title + ']')
+            result.push(movie);
         }
     });
 
