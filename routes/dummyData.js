@@ -5,7 +5,7 @@ var movies = [{
     title: 'Ant - Man',
     description: 'Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.',
     genre: 'Sci-Fi/Action',
-    videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+    videoSrc: 'https://res.cloudinary.com/aveautomedia/video/upload/v1478018231/testing/toystory.mp4',
     finished: false,
     type: 'movie'
 }, {
