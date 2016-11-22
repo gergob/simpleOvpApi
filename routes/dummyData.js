@@ -343,6 +343,36 @@ var movies = [{
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
     type: 'serie'
+}, {
+    id: 24,
+    logoSrc: 'images/logo_godfather.jpg',
+    imageSrc: 'images/banner_godfather.jpg',
+    title: 'The Godfoather',
+    length: '2h 55min',
+    releaseDate: '24 March 1972 (USA)',
+    description: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
+    genre: 'Crime, Drama',
+    actors: [ 'Marlon Brando', 'Al Pacino', 'James Caan'],
+    director: 'Francis Ford Coppola',
+    rating: 9.2,
+    videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+    finished: true,
+    type: 'movie'
+}, {
+    id: 25,
+    logoSrc: 'images/logo_thedarknight.jpg',
+    imageSrc: 'images/banner_thedarknight.jpg',
+    title: 'The Dark Night',
+    length: '2h 32min',
+    releaseDate: '18 July 2008 (USA)',
+    description: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.',
+    genre: 'Action, Crime, Drama',
+    actors: ['Christian Bale', 'Heath Ledger', 'Aaron Eckhart'],
+    director: ' Christopher Nolan',
+    rating: 9.0,
+    videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+    finished: false,
+    type: 'movie'
 }];
 
 
