@@ -292,7 +292,10 @@ router.post('/search', function(req, res, next) {
     movies.forEach(function(movie) {
         if (movie.title.toLowerCase().indexOf(keyword) >= 0 ||
             movie.description.toLowerCase().indexOf(keyword) >= 0 ||
-            movie.genre.toLowerCase().indexOf(keyword) >= 0) {
+            movie.genre.toLowerCase().indexOf(keyword) >= 0 ||
+            checkActors(movie.actors) ||
+            movie.director.toLowerCase().indexOf(keyword) >= 0 ||
+            movie.releaseDate.toLowerCase().indexOf(keyword) >= 0) {
             console.log('Found entry matching search criteria, id:[' + movie.id + '] and title:[' + movie.title + ']')
             result.push(movie);
         }
@@ -306,5 +309,16 @@ router.post('/search', function(req, res, next) {
         });
     }
 });
+
+function checkActors(actors, searchTerm) {
+    if (actors) {
+        actors.forEach(function(item) {
+            if (item.toLowerCase().indexOf(searchTerm) >= 0) {
+                return true;
+            }
+        });
+    }
+    return false;
+}
 
 module.exports = router;
