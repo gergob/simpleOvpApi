@@ -273,6 +273,21 @@ router.get('/serie', function(req, res, next) {
     });
 });
 
+router.get('/data/:nrOfItems', function(req, res, next) {
+    var result = new Array(req.params.nrOfItems),
+        movieIdx = 0;
+        console.log("Loading:" + req.params.nrOfItems + " elements.");
+
+    for (var idx = 0; idx < req.params.nrOfItems; ++idx) {
+        movieIdx = (Math.floor(Math.random() * 1000)) % movies.length;
+        result.push(movies[movieIdx]);
+    }
+
+    res.send({
+        items: result
+    });
+});
+
 router.post('/search', function(req, res, next) {
     var result = [];
     var keyword = '';
