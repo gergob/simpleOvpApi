@@ -448,6 +448,21 @@ var movies = [{
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
     type: 'serie'
+}, {
+    id: 31,
+    logoSrc: 'images/logo_shawshenk.jpg',
+    imageSrc: 'images/banner_shawshenk.jpg',
+    title: 'The Shawshank Redemption',
+    length: '144min',
+    releaseDate: '14 October 1994 (USA)',
+    description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
+    genre: 'Crime, Drama',
+    actors: ['Tim Robbins', 'Morgan Freeman', 'Bob Gunton'],
+    director: 'Frank Darabont',
+    rating: 9.3,
+    videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+    finished: false,
+    type: 'movie'
 }];
 
 
