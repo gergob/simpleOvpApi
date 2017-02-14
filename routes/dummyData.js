@@ -478,6 +478,21 @@ var movies = [{
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
     type: 'movie'
+}, {
+    id: 33,
+    logoSrc: 'images/logo_intouchables.jpg',
+    imageSrc: 'images/banner_intouchables.jpg',
+    title: 'The Intouchables',
+    length: '112min',
+    releaseDate: '22 December 2011 (Hungary)',
+    description: 'After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.',
+    genre: 'Biography, Comedy, Drama',
+    actors: ['François Cluzet', 'Omar Sy', 'Anne Le Ny'],
+    director: 'Olivier Nakache',
+    rating: 8.6,
+    videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+    finished: true,
+    type: 'movie'
 }];
 
 
