@@ -463,6 +463,21 @@ var movies = [{
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
     type: 'movie'
+}, {
+    id: 32,
+    logoSrc: 'images/logo_forest.jpg',
+    imageSrc: 'images/banner_forest.jpg',
+    title: 'Forrest Gump',
+    length: '144min',
+    releaseDate: '6 July 1994 (USA)',
+    description: 'Forrest Gump, while not intelligent, has accidentally been present at many historic moments, but his true love, Jenny Curran, eludes him.',
+    genre: 'Comedy, Drama',
+    actors: ['Tom Hanks', 'Robin Wright', 'Gary Sinis'],
+    director: 'Robert Zemeckis',
+    rating: 8.8,
+    videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+    finished: false,
+    type: 'movie'
 }];
 
 
