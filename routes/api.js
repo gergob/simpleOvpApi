@@ -4,6 +4,30 @@ var router = express.Router();
 var dummyData = require('./dummyData');
 var movies = dummyData.movies;
 
+var API_HTTP_HEADER = 'X-SimpleOvpApi';
+var API_HTTP_HEADER_VALUE = 'USER_KEY_';
+
+var acceptedUsers = [
+  'abc',
+  'abc@abc.com',
+  'test',
+  'test@test.com',
+  'a',
+  'a@a',
+  'dummy',
+  'dummy@mysite.net'
+];
+var acceptedPasswords = [
+  'abc',
+  'abc@abc.com',
+  'test',
+  'test@test.com',
+  'a',
+  'a@a',
+  'dummy',
+  'dummy@mysite.net'
+];
+
 /**
  * @api {get} /banner
  * @apiVersion 0.5.0
@@ -63,20 +87,30 @@ router.get('/banner', function(req, res, next) {
  * @apiError 403
  */
 router.post('/login', function(req, res, next) {
+
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Methods', 'GET');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     var email = req.body.email || null;
     var password = req.body.password || null;
+
+    if(email === null || password === null) {
+        var clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+        console.warn('got request without email or password data from:' + clientIp);
+        res.sendStatus(400);
+    }
+
     console.log(email);
     console.log(password);
-    if (email.toLowerCase() === 'abc@abc.com' && password === 'abc') {
+
+    var userIdx = acceptedUsers.indexOf(email.toLowerCase());
+    if (userIdx > -1 && password === acceptedPasswords[userIdx]) {
+        res.header(API_HTTP_HEADER, API_HTTP_HEADER_VALUE + userIdx);
         res.sendStatus(200);
     } else {
         res.sendStatus(403);
     }
-
 });
 
 /**
@@ -180,6 +214,7 @@ router.get('/menu', function(req, res, next) {
     };
 
     res.send(menu);
+
 });
 
 /**

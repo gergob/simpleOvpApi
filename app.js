@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var requestValidator = require('./routes/requestValidator');
 var routes = require('./routes/index');
 var api = require('./routes/api');
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(requestValidator({'excludePaths': ['/api/login']}));
 
 app.use('/', routes);
 app.use('/api', api);
