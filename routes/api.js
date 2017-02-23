@@ -222,7 +222,7 @@ router.get('/menu', function(req, res, next) {
  * @apiVersion 0.5.0
  * @apiName GetResume
  * @apiExample Example usage:
- * curl http://localhost/resume/
+ * curl http://localhost/api/resume/
  *
  * @apiSuccess {Number}   id            The ID of the movie/serie item
  * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
@@ -263,6 +263,38 @@ router.get('/resume', function(req, res, next) {
     });
 });
 
+/**
+ * @api {get} /movie
+ * @apiVersion 0.5.0
+ * @apiName GetMovie
+ * @apiExample Example usage:
+ * curl http://localhost/api/movie/
+ *
+ * @apiSuccess {Number}   id            The ID of the movie/serie item
+ * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
+ * @apiSuccess {String}   imageSrc      The path of the image for the movie/serie
+ * @apiSuccess {String}   title         The title of the movie/serie which is shown on te banner
+ * @apiSuccess {String}   description   Short text about the content of the movie/serie
+ * @apiSuccess {String}   genre         The genre of the movie/serie
+ * @apiSuccess {String}   videSrc       The path to playback of the movie/serie
+ * @apiSuccess {Boolean}  finished      Has the user finished wathing the movie/serie
+ * @apiSuccess {String}   type          The type of the asset, can be 'movie' or 'serie'
+ * @apiSuccessExample Succes-Response:
+ * HTTP/1.1 200 OK
+ *     [{
+ *         id: 1,
+ *         logoSrc: 'images/logo_antman.jpg',
+ *         imageSrc: 'images/banner_antman.jpg',
+ *         title: 'Ant - Man',
+ *         description: 'Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.',
+ *         genre: 'Sci-Fi/Action',
+ *         videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+ *         finished: false,
+ *         type: 'movie'
+ *       },...
+ *      ]
+ *
+ */
 router.get('/movie', function(req, res, next) {
     var result = [];
 
