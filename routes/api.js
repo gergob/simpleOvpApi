@@ -38,7 +38,7 @@ var acceptedPasswords = [
  *      X-SimpleOvpApi:USER_KEY_13
  * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiExample Example usage:
- * curl http://localhost/api/banner/
+ * curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/banner/
  *
  * @apiSuccess {Number}   id            The ID of the banner item
  * @apiSuccess {String}   imageSrc      The image source of the banner
@@ -132,7 +132,7 @@ router.post('/login', function(req, res, next) {
  * @apiVersion 0.5.0
  * @apiName menu
  * @apiExample Example usage:
- * curl http://localhost/api/menu/
+ * curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/menu/
  * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiSuccess {Number}   id            The ID of the menu item
  * @apiSuccess {String}   title         The title of the movie which is shown on te banner
@@ -241,7 +241,7 @@ router.get('/menu', function(req, res, next) {
  *      X-SimpleOvpApi:USER_KEY_13
  * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiExample Example usage:
- * curl http://localhost/api/resume/
+ * curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/resume/
  *
  * @apiSuccess {Number}   id            The ID of the movie/serie item
  * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
@@ -293,7 +293,7 @@ router.get('/resume', function(req, res, next) {
  * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiSuccess 200
  * @apiExample Example usage:
- * curl http://localhost/api/movie/
+ * curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/movie/
  *
  * @apiSuccess {Number}   id            The ID of the movie/serie item
  * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
@@ -344,7 +344,7 @@ router.get('/movie', function(req, res, next) {
  *      X-SimpleOvpApi:USER_KEY_13
  * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiExample Example usage:
- * curl http://localhost/api/detail/{id}
+ * curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/detail/12
  * @apiParam {Number} id Movie's or Series' unique ID.
  *
  * @apiSuccess {Number}   id            The ID of the movie/serie item
@@ -400,7 +400,7 @@ router.get('/detail/:id', function(req, res, next) {
  *      X-SimpleOvpApi:USER_KEY_13
  * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiExample Example usage:
- * curl http://localhost/api/serie/
+ * curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/serie/
  *
  * @apiSuccess {Number}   id            The ID of the movie/serie item
  * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
@@ -451,7 +451,7 @@ router.get('/serie', function(req, res, next) {
  * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiParam {Number} nr The number of elements to be returned by API.
  * @apiExample Example usage:
- * curl http://localhost/api/data/10
+ * curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/data/10
  *
  * @apiSuccess {Number}   id            The ID of the movie/serie item
  * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
