@@ -33,9 +33,9 @@ The purpose of this project was to provide an API for a React-Native POC mobile 
 
 ### Usage
 
- 1. git clone https://github.com/gergob/simpleOvpApi
- 1. cd simpleOvpApi
- 1. npm install
+ 1. `git clone https://github.com/gergob/simpleOvpApi`
+ 1. `cd simpleOvpApi`
+ 1. `npm install`
  1. launch using `./start_server.sh`
 
 
