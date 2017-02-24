@@ -5,7 +5,12 @@
     "title": "Simple OVP API Docs",
     "url": "",
     "header": {
-        "title": "Simple OVP API Docs"
+        "title": "Simple OVP API Docs",
+        "filename": "../header.md"
+    },
+    "footer": {
+        "title": "API created by Gergo Bogdan (@gergob)",
+        "filename": "../footer.md"
     },
     "template": {
         "withCompare": true,
