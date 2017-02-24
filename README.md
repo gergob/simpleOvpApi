@@ -27,7 +27,6 @@ The purpose of this project was to provide an API for a React-Native POC mobile 
  * express.js
  * node.js
  * apidoc
- * vanilla js
  * json
 
 
