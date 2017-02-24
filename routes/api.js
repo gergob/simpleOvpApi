@@ -29,16 +29,30 @@ var acceptedPasswords = [
 ];
 
 /**
- * @api {get} /banner Get All Banners
+ * @api {get} /banner banner
  * @apiVersion 0.5.0
- * @apiName GetBanner
+ * @apiName banner
+ * @apiDescription This GET method returns all the banners from the dummy db.
+ * @apiHeader {String} X-SimpleOvpApi Users unique access-key.
+ * @apiHeaderExample {String} Example:
+ *      X-SimpleOvpApi:USER_KEY_13
+ * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiExample Example usage:
- * curl http://localhost/banner/
+ * curl http://localhost/api/banner/
  *
  * @apiSuccess {Number}   id            The ID of the banner item
  * @apiSuccess {String}   imageSrc      The image source of the banner
  * @apiSuccess {String}   alt           The alt value for the image
  * @apiSuccess {String}   title         The title of the movie which is shown on te banner
+ * @apiSuccessExample {json}  Succes-Response:
+ *   HTTP/1.1 200 OK
+ *     [{
+ *         imageSrc: 'images/banner_antman.jpg',
+ *         alt: 'AntMan',
+ *         title: 'Ant - Man',
+ *         id: 1
+ *      },...
+ *     ]
  */
 router.get('/banner', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -77,14 +91,14 @@ router.get('/banner', function(req, res, next) {
 
 
 /**
- * @api {post} /login Login
+ * @api {post} /login login
  * @apiVersion 0.5.0
- * @apiName Login
+ * @apiDescription Used for login.
+ * @apiName login
  * @apiExample Example usage:
- * curl -d '{email:"john@doe.com", password:"secret"}' http://localhost/banner/
+ * curl -d '{ "email": "john@doe.com", "password": "secret" }' http://localhost/api/login/
  *
- * @apiSuccess 200
- * @apiError 403
+ * @apiError 400 In case the email address or password is not sent
  */
 router.post('/login', function(req, res, next) {
 
@@ -114,17 +128,17 @@ router.post('/login', function(req, res, next) {
 });
 
 /**
- * @api {get} /menu Get Menu Items
+ * @api {get} /menu menu
  * @apiVersion 0.5.0
- * @apiName GetMenu
+ * @apiName menu
  * @apiExample Example usage:
- * curl http://localhost/menu/
- *
+ * curl http://localhost/api/menu/
+ * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiSuccess {Number}   id            The ID of the menu item
  * @apiSuccess {String}   title         The title of the movie which is shown on te banner
  * @apiSuccess {Object[]} items         The elements defined under this menu item
  *
- * @apiSuccessExample Succes-Response:
+ * @apiSuccessExample {json} Succes-Response:
  * HTTP/1.1 200 OK
  *     {
  *        id: 'DEFAULT',
@@ -218,9 +232,14 @@ router.get('/menu', function(req, res, next) {
 });
 
 /**
- * @api {get} /resume Get Resume Items
+ * @api {get} /resume resume
  * @apiVersion 0.5.0
- * @apiName GetResume
+ * @apiName resume
+ * @apiDescription Gets all items which have a progress in playback
+ * @apiHeader {String} X-SimpleOvpApi Users unique access-key.
+ * @apiHeaderExample {String} Example:
+ *      X-SimpleOvpApi:USER_KEY_13
+ * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiExample Example usage:
  * curl http://localhost/api/resume/
  *
@@ -233,7 +252,7 @@ router.get('/menu', function(req, res, next) {
  * @apiSuccess {String}   videSrc       The path to playback of the movie/serie
  * @apiSuccess {Boolean}  finished      Has the user finished wathing the movie/serie
  * @apiSuccess {String}   type          The type of the asset, can be 'movie' or 'serie'
- * @apiSuccessExample Succes-Response:
+ * @apiSuccessExample {json} Succes-Response:
  * HTTP/1.1 200 OK
  *     [{
  *         id: 1,
@@ -264,9 +283,15 @@ router.get('/resume', function(req, res, next) {
 });
 
 /**
- * @api {get} /movie Get Movies
+ * @api {get} /movie movie
  * @apiVersion 0.5.0
- * @apiName GetMovie
+ * @apiName movie
+ * @apiDescription Gets all Movies in the database
+ * @apiHeader {String} X-SimpleOvpApi Users unique access-key.
+ * @apiHeaderExample {String} Example:
+ *      X-SimpleOvpApi:USER_KEY_13
+ * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
+ * @apiSuccess 200
  * @apiExample Example usage:
  * curl http://localhost/api/movie/
  *
@@ -310,12 +335,17 @@ router.get('/movie', function(req, res, next) {
 });
 
 /**
- * @api {get} /movie Get Movie Details
+ * @api {get} /detail/:id detail/:id
  * @apiVersion 0.5.0
- * @apiName GetMovieDetauks
+ * @apiName GetMovieDetails
+ * @apiDescription Gets details about a movie
+ * @apiHeader {String} X-SimpleOvpApi Users unique access-key.
+ * @apiHeaderExample {String} Example:
+ *      X-SimpleOvpApi:USER_KEY_13
+ * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
  * @apiExample Example usage:
  * curl http://localhost/api/detail/{id}
- * @apiParam {Number} id Movie's unique ID.
+ * @apiParam {Number} id Movie's or Series' unique ID.
  *
  * @apiSuccess {Number}   id            The ID of the movie/serie item
  * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
@@ -326,7 +356,7 @@ router.get('/movie', function(req, res, next) {
  * @apiSuccess {String}   videSrc       The path to playback of the movie/serie
  * @apiSuccess {Boolean}  finished      Has the user finished wathing the movie/serie
  * @apiSuccess {String}   type          The type of the asset, can be 'movie' or 'serie'
- * @apiSuccessExample Succes-Response:
+ * @apiSuccessExample {json} Succes-Response:
  * HTTP/1.1 200 OK
  *     [{
  *         id: 1,
@@ -360,6 +390,43 @@ router.get('/detail/:id', function(req, res, next) {
     }
 });
 
+/**
+ * @api {get} /serie serie
+ * @apiVersion 0.5.0
+ * @apiName series
+ * @apiDescription Gets all Series in the database
+ * @apiHeader {String} X-SimpleOvpApi Users unique access-key.
+ * @apiHeaderExample {String} Example:
+ *      X-SimpleOvpApi:USER_KEY_13
+ * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
+ * @apiExample Example usage:
+ * curl http://localhost/api/serie/
+ *
+ * @apiSuccess {Number}   id            The ID of the movie/serie item
+ * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
+ * @apiSuccess {String}   imageSrc      The path of the image for the movie/serie
+ * @apiSuccess {String}   title         The title of the movie/serie which is shown on te banner
+ * @apiSuccess {String}   description   Short text about the content of the movie/serie
+ * @apiSuccess {String}   genre         The genre of the movie/serie
+ * @apiSuccess {String}   videSrc       The path to playback of the movie/serie
+ * @apiSuccess {Boolean}  finished      Has the user finished wathing the movie/serie
+ * @apiSuccess {String}   type          The type of the asset, can be 'movie' or 'serie'
+ * @apiSuccessExample {json} Succes-Response:
+ * HTTP/1.1 200 OK
+ *     [{
+ *         id: 1,
+ *         logoSrc: 'images/logo_antman.jpg',
+ *         imageSrc: 'images/banner_antman.jpg',
+ *         title: 'Ant - Man',
+ *         description: 'Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.',
+ *         genre: 'Sci-Fi/Action',
+ *         videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+ *         finished: false,
+ *         type: 'movie'
+ *       },...
+ *      ]
+ *
+ */
 router.get('/serie', function(req, res, next) {
     var result = [];
     movies.forEach(function(movie) {
@@ -373,6 +440,45 @@ router.get('/serie', function(req, res, next) {
     });
 });
 
+/**
+ * @api {get} /data/:nr data/:nr
+ * @apiVersion 0.5.0
+ * @apiName data
+ * @apiDescription Gets a fix number of data (series or movies)
+ * @apiHeader {String} X-SimpleOvpApi Users unique access-key.
+ * @apiHeaderExample {String} Example:
+ *      X-SimpleOvpApi:USER_KEY_13
+ * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
+ * @apiParam {Number} nr The number of elements to be returned by API.
+ * @apiExample Example usage:
+ * curl http://localhost/api/data/10
+ *
+ * @apiSuccess {Number}   id            The ID of the movie/serie item
+ * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
+ * @apiSuccess {String}   imageSrc      The path of the image for the movie/serie
+ * @apiSuccess {String}   title         The title of the movie/serie which is shown on te banner
+ * @apiSuccess {String}   description   Short text about the content of the movie/serie
+ * @apiSuccess {String}   genre         The genre of the movie/serie
+ * @apiSuccess {String}   videSrc       The path to playback of the movie/serie
+ * @apiSuccess {Boolean}  finished      Has the user finished wathing the movie/serie
+ * @apiSuccess {String}   type          The type of the asset, can be 'movie' or 'serie'
+ * @apiSuccessExample {json} Succes-Response:
+ *   HTTP/1.1 200 OK
+ *     { "items" :[{
+ *          id: 1,
+ *          logoSrc: 'images/logo_antman.jpg',
+ *          imageSrc: 'images/banner_antman.jpg',
+ *          title: 'Ant - Man',
+ *          description: 'Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.',
+ *          genre: 'Sci-Fi/Action',
+ *          videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+ *          finished: false,
+ *          type: 'movie'
+ *         },...
+ *       ]
+ *     }
+ *
+ */
 router.get('/data/:nrOfItems', function(req, res, next) {
     var result = new Array(req.params.nrOfItems),
         movieIdx = 0;
@@ -388,6 +494,52 @@ router.get('/data/:nrOfItems', function(req, res, next) {
     });
 });
 
+/**
+ * @api {post} /search search
+ * @apiVersion 0.5.0
+ * @apiName search
+ * @apiDescription Searches the keyword in
+ *     title
+ *     genre
+ *     description
+ *     actors
+ *     director
+ *     releaseDate
+ * @apiHeader {String} X-SimpleOvpApi Users unique access-key.
+ * @apiHeaderExample {String} Example:
+ *      X-SimpleOvpApi:USER_KEY_13
+ * @apiError 403 Forbidden in case X-SimpleOvpApi HTTP header is not available
+ * @apiError 400 The keyword body parameter is not available or it is empty
+ * @apiError 404 Search does not have any results
+ * @apiExample Example usage:
+ *     curl http://localhost/api/search
+ *
+ * @apiSuccess {Number}   id            The ID of the movie/serie item
+ * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
+ * @apiSuccess {String}   imageSrc      The path of the image for the movie/serie
+ * @apiSuccess {String}   title         The title of the movie/serie which is shown on te banner
+ * @apiSuccess {String}   description   Short text about the content of the movie/serie
+ * @apiSuccess {String}   genre         The genre of the movie/serie
+ * @apiSuccess {String}   videSrc       The path to playback of the movie/serie
+ * @apiSuccess {Boolean}  finished      Has the user finished wathing the movie/serie
+ * @apiSuccess {String}   type          The type of the asset, can be 'movie' or 'serie'
+ * @apiSuccessExample {json} Succes-Response:
+ *   HTTP/1.1 200 OK
+ *     { "items" :[{
+ *          id: 1,
+ *          logoSrc: 'images/logo_antman.jpg',
+ *          imageSrc: 'images/banner_antman.jpg',
+ *          title: 'Ant - Man',
+ *          description: 'Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.',
+ *          genre: 'Sci-Fi/Action',
+ *          videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
+ *          finished: false,
+ *          type: 'movie'
+ *         },...
+ *       ]
+ *     }
+ *
+ */
 router.post('/search', function(req, res, next) {
     var result = [];
     var keyword = '';
