@@ -512,7 +512,7 @@ router.get('/data/:nrOfItems', function(req, res, next) {
  * @apiError 400 The keyword body parameter is not available or it is empty
  * @apiError 404 Search does not have any results
  * @apiExample Example usage:
- *     curl http://localhost/api/search
+ * curl -X POST -H "X-SimpleOvpApi: USER_KEY_2" -H "Content-Type: application/x-www-form-urlencoded" -d 'keyword=john'
  *
  * @apiSuccess {Number}   id            The ID of the movie/serie item
  * @apiSuccess {String}   logoSrc       The path to the logo for the movie/serie
