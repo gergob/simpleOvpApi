@@ -33,7 +33,10 @@ The purpose of this project was to provide an API for a React-Native POC mobile 
 
 ### Usage
 
-The server can be started using the `start_server.sh` bash file.
+ # git clone https://github.com/gergob/simpleOvpApi
+ # cd simpleOvpApi
+ # npm install
+ # launch using `./start_server.sh`
 
 
 ### Implementation details
