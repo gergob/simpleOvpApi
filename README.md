@@ -9,10 +9,14 @@ The purpose of this project was to provide an API for a React-Native POC mobile 
 
 ### API Endpoints
 
- * /api/login [POST] - Authenticates the user - example: `curl -d '{ "email": "john@doe.com", "password": "secret" }' http://localhost/api/login/`
- * /api/movie [GET] - Returns all the Movies from the database - example: `curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/movie/`
- * /api/serie [GET] - Returns all the Series from the database - example: `curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/serie/`
- * /api/detail/:id [GET] - Returns all the data for the asset with the given `:id` - example: `curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/detail/1032`
+|endpoint|method|description|example|
+|--------|------|-----------|-------|
+|/api/login|GET|Authenticates the user|`curl -d '{ "email": "john@doe.com", "password": "secret" }' http://localhost/api/login/`|
+|/api/movie|GET|Returns all the Movies from the database|curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/movie/`|
+|/api/serie|GET|Returns all the Series from the database|`curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/serie/`|
+|/api/detail/:id|GET|Returns all the data for the asset with the given `:id`|`curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/detail/1032`|
+
+
 
 ### Tech Stack
 
