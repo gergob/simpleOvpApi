@@ -223,7 +223,15 @@ router.get('/menu', function(req, res, next) {
                 'page': 'Search',
                 'icon': 'search',
                 'items': []
-            }, ]
+            }, {
+                'action': 'accedo://page/performance',
+                'id': 'performance',
+                'state': '',
+                'title': 'Performance',
+                'page': 'Performance',
+                'icon': 'equalizer',
+                'items': []
+            },]
         }
     };
 
