@@ -237,7 +237,7 @@ router.get('/menu', function(req, res, next) {
                 'state': '',
                 'title': 'Promotion',
                 'page': 'Promotion',
-                'icon': 'local atm',
+                'icon': 'local-atm',
                 'items': []
             }]
         }
