@@ -231,7 +231,15 @@ router.get('/menu', function(req, res, next) {
                 'page': 'Performance',
                 'icon': 'equalizer',
                 'items': []
-            },]
+            }, {
+                'action': 'accedo://page/promotion',
+                'id': 'promotion',
+                'state': '',
+                'title': 'Promotion',
+                'page': 'Promotion',
+                'icon': 'local atm',
+                'items': []
+            }]
         }
     };
 
@@ -366,7 +374,7 @@ router.get('/movie', function(req, res, next) {
  * @apiSuccess {String}   type          The type of the asset, can be 'movie' or 'serie'
  * @apiSuccess {Number}   price         The price of the asset, can be 'movie' or 'serie'
  * @apiSuccess {Number}   promotionPrice         The promotion price of the asset, can be 'movie' or 'serie'
- * @apiSuccess {Boolean}  isInPromotion          Has the asset been in promotion 
+ * @apiSuccess {Boolean}  isInPromotion          Has the asset been in promotion
  * @apiSuccessExample Succes-Response:
  * HTTP/1.1 200 OK
  *     [{
