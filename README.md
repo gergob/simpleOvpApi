@@ -19,6 +19,7 @@ The purpose of this project was to provide an API for a React-Native POC mobile 
 |`/data/:nr`|`GET`|Gets a fix number of items (series and/or movies)|`curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/data/20`|
 |`/search`|`POST`|Searches the keyword in: title, genre, description, actors, director, releaseDate|`curl -X POST -H "X-SimpleOvpApi: USER_KEY_2" -H "Content-Type: application/x-www-form-urlencoded" -d 'keyword=john'`|
 |`/menu`|`GET`|Gets the menu elements and their configurations|`curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/menu/`|
+|`/promotion`|`GET`|Gets the promotional elements from the database|`curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/promotion/`|
 
 
 
