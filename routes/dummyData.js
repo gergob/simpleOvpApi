@@ -12,7 +12,10 @@ var movies = [{
     rating: 7.4,
     videoSrc: 'https://res.cloudinary.com/aveautomedia/video/upload/v1478018231/testing/toystory.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 2,
     logoSrc: 'images/logo_avengers.jpg',
@@ -27,7 +30,10 @@ var movies = [{
     rating: 8.1,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: true
 }, {
     id: 3,
     logoSrc: 'images/logo_edgeoftomorrow.jpg',
@@ -42,7 +48,10 @@ var movies = [{
     rating: 7.9,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 4,
     logoSrc: 'images/logo_interstellar.jpg',
@@ -57,7 +66,10 @@ var movies = [{
     rating: 8.6,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: true
 }, {
     id: 5,
     logoSrc: 'images/logo_johncarter.jpg',
@@ -72,7 +84,10 @@ var movies = [{
     rating: 6.6,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 6,
     logoSrc: 'images/logo_captainamerica.jpg',
@@ -87,7 +102,10 @@ var movies = [{
     rating: 6.9,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 14.99,
+    promotionPrice: 9.99,
+    isInPromotion: true
 }, {
     id: 7,
     logoSrc: 'images/logo_deadpool.jpg',
@@ -102,7 +120,10 @@ var movies = [{
     rating: 8.1,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 5.99,
+    promotionPrice: 4.99,
+    isInPromotion: true
 }, {
     id: 8,
     logoSrc: 'images/logo_fantastic4.jpg',
@@ -117,7 +138,10 @@ var movies = [{
     rating: 4.3,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 9,
     logoSrc: 'images/logo_frozen.jpg',
@@ -132,7 +156,10 @@ var movies = [{
     rating: 7.6,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 10,
     logoSrc: 'images/logo_ironman3.jpg',
@@ -147,7 +174,10 @@ var movies = [{
     rating: 7.2,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 9.99,
+    promotionPrice: 6.50,
+    isInPromotion: true
 }, {
     id: 11,
     logoSrc: 'images/logo_rio.jpg',
@@ -162,7 +192,10 @@ var movies = [{
     rating: 7.0,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 12,
     logoSrc: 'images/logo_riseoftheguardians.jpg',
@@ -177,7 +210,10 @@ var movies = [{
     rating: 7.3,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 13,
     logoSrc: 'images/logo_startrek.jpg',
@@ -192,7 +228,10 @@ var movies = [{
     rating: 7.8,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 7.33,
+    promotionPrice: 4.50,
+    isInPromotion: true
 }, {
     id: 14,
     logoSrc: 'images/logo_thehobbit.jpg',
@@ -207,7 +246,10 @@ var movies = [{
     rating: 7.9,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 15,
     logoSrc: 'images/logo_theinterview.jpg',
@@ -222,7 +264,10 @@ var movies = [{
     rating: 6.6,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 16,
     logoSrc: 'images/logo_warcraft.jpg',
@@ -237,7 +282,10 @@ var movies = [{
     rating: 7.1,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 17,
     logoSrc: 'images/logo_bigbangtheory.jpg',
@@ -252,7 +300,10 @@ var movies = [{
     rating: 8.4,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 18,
     logoSrc: 'images/logo_friends.jpg',
@@ -267,7 +318,10 @@ var movies = [{
     rating: 9.0,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 19,
     logoSrc: 'images/logo_stargate.jpg',
@@ -282,7 +336,10 @@ var movies = [{
     rating: 8.4,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 20,
     logoSrc: 'images/logo_familyguy.jpg',
@@ -297,7 +354,10 @@ var movies = [{
     rating: 8.3,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 21,
     logoSrc: 'images/logo_desperate.jpg',
@@ -312,7 +372,10 @@ var movies = [{
     rating: 7.5,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 22,
     logoSrc: 'images/logo_lost.jpg',
@@ -327,7 +390,10 @@ var movies = [{
     rating: 8.4,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 23,
     logoSrc: 'images/logo_talespin.jpg',
@@ -342,7 +408,10 @@ var movies = [{
     rating: 5.0,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 24,
     logoSrc: 'images/logo_thegodfather.jpg',
@@ -357,7 +426,10 @@ var movies = [{
     rating: 9.2,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: true
 }, {
     id: 25,
     logoSrc: 'images/logo_thedarknight.jpg',
@@ -372,7 +444,10 @@ var movies = [{
     rating: 9.0,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 3.99,
+    promotionPrice: 0.99,
+    isInPromotion: true
 }, {
     id: 26,
     logoSrc: 'images/logo_lotr1.jpg',
@@ -387,7 +462,10 @@ var movies = [{
     rating: 8.8,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 9.99,
+    promotionPrice: 5.99,
+    isInPromotion: true
 }, {
     id: 27,
     logoSrc: 'images/logo_inception.jpg',
@@ -402,7 +480,10 @@ var movies = [{
     rating: 8.8,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 7.99,
+    promotionPrice: 3.99,
+    isInPromotion: true
 }, {
     id: 28,
     logoSrc: 'images/logo_bandofbrothers.jpg',
@@ -417,7 +498,10 @@ var movies = [{
     rating: 9.5,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 29,
     logoSrc: 'images/logo_breakingbad.jpg',
@@ -432,7 +516,10 @@ var movies = [{
     rating: 9.5,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 30,
     logoSrc: 'images/logo_got.jpg',
@@ -447,7 +534,10 @@ var movies = [{
     rating: 9.5,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'serie'
+    type: 'serie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: true
 }, {
     id: 31,
     logoSrc: 'images/logo_shawshenk.jpg',
@@ -462,7 +552,10 @@ var movies = [{
     rating: 9.3,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: true
 }, {
     id: 32,
     logoSrc: 'images/logo_forest.jpg',
@@ -477,7 +570,10 @@ var movies = [{
     rating: 8.8,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: false,
-    type: 'movie'
+    type: 'movie',
+    price: 4.99,
+    promotionPrice: 2.99,
+    isInPromotion: false
 }, {
     id: 33,
     logoSrc: 'images/logo_intouchables.jpg',
@@ -492,7 +588,10 @@ var movies = [{
     rating: 8.6,
     videoSrc: 'http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     finished: true,
-    type: 'movie'
+    type: 'movie',
+    price: 6.99,
+    promotionPrice: 3.99,
+    isInPromotion: true
 }];
 
 
