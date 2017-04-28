@@ -105,7 +105,7 @@ router.post('/login', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, PUT');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept', );
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept' );
 
     var email = req.body.email || null;
     var password = req.body.password || null;
