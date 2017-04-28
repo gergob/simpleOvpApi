@@ -90,6 +90,15 @@ router.get('/banner', function(req, res, next) {
 });
 
 
+router.options('/login', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Methods', 'POST, OPTIONS, PUT');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept' );
+
+  res.sendStatus(200);
+});
+
 /**
  * @api {post} /login login
  * @apiVersion 0.5.0
