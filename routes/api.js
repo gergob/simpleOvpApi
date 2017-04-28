@@ -99,6 +99,16 @@ router.options('/login', function(req, res, next) {
   res.sendStatus(200);
 });
 
+router.options('/resume', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Methods', 'GET');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept' );
+
+  res.sendStatus(200);
+});
+
+
 /**
  * @api {post} /login login
  * @apiVersion 0.5.0
