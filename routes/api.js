@@ -57,8 +57,9 @@ var acceptedPasswords = [
 router.get('/banner', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
+
     var bannerData = [{
         imageSrc: 'images/banner_antman.jpg',
         alt: 'AntMan',
@@ -94,7 +95,7 @@ router.options('/login', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Methods', 'POST, OPTIONS, PUT');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept' );
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
 
   res.sendStatus(200);
 });
@@ -102,8 +103,8 @@ router.options('/login', function(req, res, next) {
 router.options('/resume', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Methods', 'GET');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept' );
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
 
   res.sendStatus(200);
 });
@@ -307,6 +308,11 @@ router.get('/menu', function(req, res, next) {
 router.get('/resume', function(req, res, next) {
     var result = [];
 
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
+
     movies.forEach(function(movie) {
         if (!movie.finished) {
             result.push(movie);
@@ -316,6 +322,15 @@ router.get('/resume', function(req, res, next) {
     res.send({
         items: result
     });
+});
+
+router.options('/movie', function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
+
+    res.sendStatus(200);
 });
 
 /**
@@ -369,6 +384,16 @@ router.get('/movie', function(req, res, next) {
         items: result
     });
 });
+
+router.options('/promotion', function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
+
+    res.sendStatus(200);
+});
+
 
 /**
  * @api {get} /promotion promotion
@@ -424,6 +449,16 @@ router.get('/promotion', function(req, res, next) {
         items: result
     });
 });
+
+router.options('/detail', function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
+
+    res.sendStatus(200);
+});
+
 
 /**
  * @api {get} /detail/:id detail/:id
@@ -481,6 +516,16 @@ router.get('/detail/:id', function(req, res, next) {
     }
 });
 
+router.options('/serie', function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
+
+    res.sendStatus(200);
+});
+
+
 /**
  * @api {get} /serie serie
  * @apiVersion 0.5.0
@@ -530,6 +575,16 @@ router.get('/serie', function(req, res, next) {
         items: result
     });
 });
+
+router.options('/data/:nrOfItems', function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
+
+    res.sendStatus(200);
+});
+
 
 /**
  * @api {get} /data/:nr data/:nr
@@ -584,6 +639,16 @@ router.get('/data/:nrOfItems', function(req, res, next) {
         items: result
     });
 });
+
+router.options('/search', function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
+
+    res.sendStatus(200);
+});
+
 
 /**
  * @api {post} /search search
