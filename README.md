@@ -11,7 +11,7 @@ The purpose of this project was to provide an API for a React-Native POC mobile 
 
 | Endpoint | method | description | example |
 |--------|------|-----------|-------|
-|`/login`|`GET`|Authenticates the user|`curl -d '{ "email": "john@doe.com", "password": "secret" }' http://localhost/api/login/`|
+|`/login`|`POST`|Authenticates the user|`curl -d '{ "email": "john@doe.com", "password": "secret" }' http://localhost/api/login/`|
 |`/movie`|`GET`|Returns all the Movies from the database|`curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/movie/`|
 |`/serie`|`GET`|Returns all the Series from the database|`curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/serie/`|
 |`/detail/:id`|`GET`|Returns all the data for the asset with the given `:id`|`curl -X GET -H "X-SimpleOvpApi: USER_KEY_2" http://localhost/api/detail/1032`|
