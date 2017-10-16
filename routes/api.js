@@ -1,5 +1,7 @@
 var express = require('express');
+var cors = require('cors');
 var router = express.Router();
+var requestValidator = require('./requestValidator');
 
 var dummyData = require('./dummyData');
 var movies = dummyData.movies;
@@ -28,6 +30,23 @@ var acceptedPasswords = [
   'dummy@mysite.net'
 ];
 
+var apiCorsMiddleware = cors({
+  origin: '*',
+  methods: 'GET,HEAD,PUT,OPTIONS,POST,DELETE',
+  allowedHeaders: [
+    'X-SimpleOvpApi',
+  ],
+  exposedHeaders: [
+    'X-SimpleOvpApi',
+  ],
+  credentials: false,
+  preflightContinue: true,
+  optionsSuccessStatus: 200,
+});
+
+router.use(apiCorsMiddleware);
+router.use(requestValidator({'excludePaths': ['/api/login']}));
+
 /**
  * @api {get} /banner banner
  * @apiVersion 0.5.0
@@ -55,11 +74,6 @@ var acceptedPasswords = [
  *     ]
  */
 router.get('/banner', function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
     var bannerData = [{
         imageSrc: 'images/banner_antman.jpg',
         alt: 'AntMan',
@@ -90,26 +104,6 @@ router.get('/banner', function(req, res, next) {
     res.send(bannerData);
 });
 
-
-router.options('/login', function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Methods', 'POST, OPTIONS, PUT');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
-  res.sendStatus(200);
-});
-
-router.options('/resume', function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
-  res.sendStatus(200);
-});
-
-
 /**
  * @api {post} /login login
  * @apiVersion 0.5.0
@@ -121,12 +115,6 @@ router.options('/resume', function(req, res, next) {
  * @apiError 400 In case the email address or password is not sent
  */
 router.post('/login', function(req, res, next) {
-
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, PUT');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept' );
-
     var email = req.body.email || null;
     var password = req.body.password || null;
 
@@ -308,11 +296,6 @@ router.get('/menu', function(req, res, next) {
 router.get('/resume', function(req, res, next) {
     var result = [];
 
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
     movies.forEach(function(movie) {
         if (!movie.finished) {
             result.push(movie);
@@ -322,15 +305,6 @@ router.get('/resume', function(req, res, next) {
     res.send({
         items: result
     });
-});
-
-router.options('/movie', function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
-    res.sendStatus(200);
 });
 
 /**
@@ -385,16 +359,6 @@ router.get('/movie', function(req, res, next) {
     });
 });
 
-router.options('/promotion', function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
-    res.sendStatus(200);
-});
-
-
 /**
  * @api {get} /promotion promotion
  * @apiVersion 0.7.0
@@ -448,15 +412,6 @@ router.get('/promotion', function(req, res, next) {
     res.send({
         items: result
     });
-});
-
-router.options('/detail', function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
-    res.sendStatus(200);
 });
 
 
@@ -516,16 +471,6 @@ router.get('/detail/:id', function(req, res, next) {
     }
 });
 
-router.options('/serie', function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
-    res.sendStatus(200);
-});
-
-
 /**
  * @api {get} /serie serie
  * @apiVersion 0.5.0
@@ -576,14 +521,6 @@ router.get('/serie', function(req, res, next) {
     });
 });
 
-router.options('/data/:nrOfItems', function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
-    res.sendStatus(200);
-});
 
 
 /**
@@ -638,15 +575,6 @@ router.get('/data/:nrOfItems', function(req, res, next) {
     res.send({
         items: result
     });
-});
-
-router.options('/search', function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-SimpleOvpApi' );
-
-    res.sendStatus(200);
 });
 
 
