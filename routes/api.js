@@ -45,7 +45,7 @@ var apiCorsMiddleware = cors({
 });
 
 router.use(apiCorsMiddleware);
-router.use(requestValidator({'excludePaths': ['/api/login']}));
+router.use(requestValidator({'excludePaths': ['/login']}));
 
 /**
  * @api {get} /banner banner
