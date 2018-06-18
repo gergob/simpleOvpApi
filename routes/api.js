@@ -17,7 +17,8 @@ var acceptedUsers = [
   'a',
   'a@a',
   'dummy',
-  'dummy@mysite.net'
+  'dummy@mysite.net',
+  'john@doe.com'
 ];
 var acceptedPasswords = [
   'abc',
@@ -27,14 +28,16 @@ var acceptedPasswords = [
   'a',
   'a@a',
   'dummy',
-  'dummy@mysite.net'
+  'dummy@mysite.net',
+  'secret'
 ];
 
 var apiCorsMiddleware = cors({
   origin: '*',
   methods: 'GET,HEAD,PUT,OPTIONS,POST,DELETE',
   allowedHeaders: [
-    'X-SimpleOvpApi',
+    'Content-Type',
+    'X-SimpleOvpApi'
   ],
   exposedHeaders: [
     'X-SimpleOvpApi',
