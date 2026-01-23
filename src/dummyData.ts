@@ -1,4 +1,29 @@
-var movies = [{
+export interface Movie {
+    id: number;
+    logoSrc: string;
+    imageSrc: string;
+    title: string;
+    length: string;
+    releaseDate: string;
+    description: string;
+    genre: string;
+    actors: string[];
+    director: string;
+    rating: number;
+    videoSrc: string;
+    finished: boolean;
+    type: 'movie' | 'serie';
+    price: number;
+    promotionPrice: number;
+    isInPromotion: boolean;
+}
+
+export const types = {
+    MOVIE: 'movie',
+    SERIE: 'serie'
+};
+
+export const movies: Movie[] = [{
     id: 1,
     logoSrc: 'images/logo_antman.jpg',
     imageSrc: 'images/banner_antman.jpg',
@@ -593,12 +618,3 @@ var movies = [{
     promotionPrice: 3.99,
     isInPromotion: true
 }];
-
-
-module.exports = {
-    movies: movies,
-    types: {
-        MOVIE: 'movie',
-        SERIE: 'serie'
-    }
-}

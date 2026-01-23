@@ -2,4 +2,4 @@
 
 localPath=`pwd`
 
-apidoc -i $localPath/routes/ -o $localPath/public/apidoc/
+apidoc -i $localPath/src/routes/ -o $localPath/public/apidoc/

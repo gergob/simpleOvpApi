@@ -2,8 +2,10 @@
   "name": "simple-ovp-api",
   "version": "0.8.0",
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "echo 0"
+    "start": "node ./dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "build": "rimraf dist && tsc",
+    "test": "jest"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -14,14 +16,30 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.6",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/debug": "^4.1.12",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^25.0.10",
+    "@types/serve-favicon": "^2.5.7",
+    "@types/supertest": "^6.0.3",
     "apidoc": "~0.17.5",
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.17.1",
     "jade": "~1.11.0",
+    "jest": "^30.2.0",
     "morgan": "~1.9.1",
-    "serve-favicon": "^2.5.0"
+    "rimraf": "^6.1.2",
+    "serve-favicon": "^2.5.0",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   },
   "private": true
 }
